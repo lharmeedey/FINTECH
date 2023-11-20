@@ -1,0 +1,161 @@
+<!-- navbar -->
+
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand logo"><span class="logo text-warning">Fintech</span><span class="text-success logo"> App</span> </a>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" (click)="register()" type="submit">LogOut</button>
+      </form>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+<!-- Add users -->
+<div class="container-fluid">
+    
+    <div class="row">
+       <div class="col-md-4 mx-auto mt-5">
+        <div class="card border-0 shadow p-3">
+            <div class="">
+                <div class=" mb-3">
+                   
+                    <h5 class="text-center text-warning">Transaction History</h5>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="payment_ref">
+                    <label for="firstname">Payment Ref</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastName" name="lastname"[(ngModel)]="source_acc">
+                    <label for="lastname">Source Acc</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="firstName" name="email" [(ngModel)]="source_acc_name">
+                    <label for="email">Source Acc Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="destination_acc">
+                    <label for="mobile">Destination Acc</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="destination_acc_name">
+                    <label for="mobile">Destination Acc Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="destination_bank_code">
+                    <label for="mobile">Destination BankCode</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="amount">
+                    <label for="mobile">Amount</label>
+                </div><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="trans_status">
+                    <label for="mobile">Trans Status</label>
+                </div>
+                <button type="button" class="btn btn-outline-success" (click)="addUser()"> Add User</button>
+            </div>
+        </div>
+       </div>
+        
+    </div>
+
+
+    <!-- Daily Summary -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col ">
+                <div class="card bg-primary">
+                <h5 class="p-5 text-center">Total Count</h5>
+                <h6 class="p-5 text-center">50</h6>
+            </div>
+            </div>
+            <div class="col space">
+                <div class="card bg-success">
+                <h5 class="p-5 text-center">Successful</h5>
+                <h6 class="p-5 text-center">30</h6>
+            </div>
+            </div>
+            <div class="col  spac">
+                <div class="card bg-danger">
+                <h5 class="p-5 text-center">Failed</h5>
+                <h6 class="p-5 text-center">3</h6>
+            </div>
+            </div>
+            <div class="col ">
+                <div class="card bg-warning">
+                <h5 class="p-5 text-center">Pending</h5>
+                <h6 class="p-5 text-center">6</h6>
+            </div>
+            </div>
+        </div>
+   </div>
+
+
+
+
+
+
+   
+
+  <!-- Table Data -->
+  <div class="container mt-5 mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Left column  -->
+            <div class="card"  >
+                <div class="card-body">
+                    <div class="container mt-2 table-responsive">
+                        
+                            
+                        <h4 class="text-danger t-text mb-4">Transaction History</h4> 
+                              
+                        
+                        <table class="table table-borderless">
+                           
+                             
+                            <thead>
+                                <tr>
+                                    <th scope="col">SessionID</th>
+                                    <th scope="col">Payment Ref</th>
+                                    <th scope="col">Source Acc</th>
+                                    <th scope="col">Source Acc Name</th>
+                                    <th scope="col">Destination Acc</th>
+                                    <th scope="col">Destination Acc Name</th>
+                                    <th scope="col">Destination BankCode</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Trans Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of usersList">
+                                    <td>{{user.id}}</td>
+                                    <td>{{user.payment_ref}}</td>
+                                    <td>{{user.source_acc}}</td>
+                                    <td>{{user.source_acc_name}}</td>
+                                    <td>{{user.destination_acc}}</td>
+                                    <td>{{user.destination_acc_name}}</td>
+                                    <td>{{user.destination_bank_code}}</td>
+                                    <td>{{user.amount}}</td>
+                                    <td>{{user.trans_status}}</td>
+                                    <td>
+                                      <button class="btn btn-outline-danger" (click)="deleteUser(user)">Deactivate</button>
+                                    </td>
+                            </tbody>
+                        </table>
+                        </div>
+                </div> 
+            </div>
+        </div>
+        
+        
+    
+<!-- chart -->
+<app-chart></app-chart>
+
+

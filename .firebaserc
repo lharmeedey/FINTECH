@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "admin-ebe7f": {
+      "hosting": {
+        "fintech": [
+          "admin-ebe7f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "admin-ebe7f"
+  }
+}

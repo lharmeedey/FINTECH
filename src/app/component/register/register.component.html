@@ -1,0 +1,32 @@
+<div class="container mx-auto">
+    <div class="row mt-5 ">
+      
+        <div class="col-4 mx-auto ">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <h4 class="text-dark text-muted">Register</h4>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                        </div>
+                        <button type="button" class="btn btn-info" (click)="register()">Register</button>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <a href ="/login" style="text-decoration: none;">Have an Account? <span class="text-danger">Register </span></a>
+                            </div>
+                          
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
